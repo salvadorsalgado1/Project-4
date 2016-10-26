@@ -1,0 +1,96 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Node;
+import java.util.*;
+/**
+ *
+ * @author Student-HSLH133
+ */
+class QueueADT {
+   // Node nod = new Node();
+    private Node head, tail;
+    int size;
+    
+   public Node dequeue()
+    {
+        if (tail == head)
+        {
+            
+        }
+           else
+            head = head.getHead();
+        
+        return head;
+    }
+   
+    public void enqueue( int newValue)
+    {
+        Node nodee = new Node();
+        QueueADT node = new QueueADT();
+        
+//      if (tail == null)
+//          head == newNode;
+//      else 
+//          tail.setValue(newNode);
+//      tail = newNode;
+if (tail == null)
+{
+    head = nodee;
+    tail = nodee;
+    
+    
+}
+else 
+{
+    
+    tail.setNext(nodee);
+    tail = tail.getHead();
+}
+    }
+    public int getSize()
+    {
+          
+        return size;
+    }
+   
+    
+   public void insert(int a)
+   {
+       Node node = new Node();
+       if (tail == null)
+       {
+           head = node;
+           tail = node;
+       }
+       else
+       {
+           
+           tail.setNext(head);
+           tail = tail.getHead();
+       }
+       size++;
+   }
+     public boolean isEmpty()
+    {
+      
+      return head == null;
+    }
+     public void linkedQueue(int size)
+    {
+        
+        head = null;
+        tail = null;
+        size = 0;
+        
+    }
+    public int peek(int a)
+    {
+        return tail.setValue(a);
+    }
+    
+   
+    
+}
