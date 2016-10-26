@@ -1,0 +1,57 @@
+package Node;
+
+/**
+ *
+ * @author Student-HSLH133
+ */
+class Node {
+ 
+int size;
+Node head;
+
+
+  
+
+
+public Node()
+   {      
+       size = 0;
+      head = null;   
+   }
+   
+   public Node(int newValue)
+   {      
+       size = newValue;       
+   }   
+   public Node(int newValue, Node newHead)
+   {
+       size = newValue;
+       head = newHead;    
+   }
+      
+   public int getSize()
+   {       
+       return size;      
+   }
+   
+   public Node getHead()
+   {            
+      return head;       
+   }
+   public void setValue(int newValue)
+   {
+       size = newValue;
+   }
+   public void setNext(Node newHead)
+   {
+       head = newHead;
+   }
+   
+  
+  
+   
+     
+       
+    
+    
+}
