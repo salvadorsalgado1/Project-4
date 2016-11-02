@@ -1,36 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Node;
 
-/**
- *
- * @author Student-HSLH133
- */
-public class TestingClass {
 
- 
- 
+public class TestingClass {
     
     public static void main(String[] args) {
          
-        
-        
-        
         QueueADT queue = new QueueADT();
-       
-       queue.enqueue(4);
-      queue.insert(3);
-      queue.insert(4);
-      
-    System.out.print(queue.getSize());
-    System.out.print(queue.isEmpty());
-  System.out.print(queue.peek());
+     System.out.print("Adding 4,5 and 2 to the queue...\n ");
+     queue.enqueue(4);
+     queue.enqueue(5);
+     queue.enqueue(2);//4,5,2
+     
+     System.out.print("\nRemoving 4..."); //remove (4)
+     queue.dequeue(); //5,2
+     
+     queue.enqueue(7);// 5,2,7
+     System.out.print("\nWhats in front of the line? : " + queue.peek());
+     System.out.print("\nClearing queue...\n");
     
-//queue.enqueue(2);
-  //  queue.dequeue();
+     queue.dequeueAll();// clear all queue
+     
+     System.out.print("Adding 9 to queue..");
+     queue.enqueue(9);// 9
+     System.out.print("\nWho is first in line?: "+queue.peek());//  queue.peek();
+     System.out.println("\nIs the queue empty? "+queue.isEmpty());
+
+// System.out.print("\nWho is first in line? : \n");
+
+    
+
     }
     
 }
