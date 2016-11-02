@@ -1,96 +1,90 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Node;
 import java.util.*;
 /**
  *
- * @author Student-HSLH133
+ * @author Salvador
  */
-class QueueADT {
-   // Node nod = new Node();
-    private Node head, tail;
+public class QueueADT {
+   
+    private Node tail;
     int size;
-    
-   public Node dequeue()
+    public QueueADT()
     {
-        if (tail == head)
-        {
-            
-        }
-           else
-            head = head.getHead();
         
-        return head;
+        tail = null;
     }
-   
-    public void enqueue( int newValue)
-    {
-        Node nodee = new Node();
-        QueueADT node = new QueueADT();
-        
-//      if (tail == null)
-//          head == newNode;
-//      else 
-//          tail.setValue(newNode);
-//      tail = newNode;
-if (tail == null)
-{
-    head = nodee;
-    tail = nodee;
     
-    
-}
-else 
-{
-    
-    tail.setNext(nodee);
-    tail = tail.getHead();
-}
-    }
-    public int getSize()
-    {
-          
-        return size;
-    }
-   
-    
-   public void insert(int a)
+   public Object dequeue() throws QueueException 
    {
-       Node node = new Node();
-       if (tail == null)
-       {
-           head = node;
-           tail = node;
-       }
-       else
-       {
-           
-           tail.setNext(head);
-           tail = tail.getHead();
-       }
-       size++;
+    if (!isEmpty()) 
+    {
+      
+      Node head = tail.next;
+      if (head == tail) { 
+        tail = null;           
+      }
+      else 
+      {
+        tail.next = head.next;
+      }  
+      return head.size;
+    }
+    else
+    {
+      throw new QueueException("QueueException on dequeue:"
+                             + "queue empty");
+    }  
+  }  
+    public void enqueue(int newItem)
+    {
+        Node nodee = new Node(newItem);
+        if (isEmpty())
+        {
+            nodee.next = nodee;
+        }
+        else 
+        {
+           nodee.next = tail.next;
+           tail.next = nodee;
+        }
+        tail = nodee;
+    }
+   public void dequeueAll()
+   {
+       
+       tail = null;
+       System.out.print("Queue Cleared!\n");
    }
      public boolean isEmpty()
     {
       
-      return head == null;
+      return tail == null;
     }
-     public void linkedQueue(int size)
+
+     public Object peek() throws QueueException 
+     {
+         if (!isEmpty()) 
+         {
+      
+             Node head = tail.next;
+      
+            return head.size;
+         }
+    else 
     {
-        
-        head = null;
-        tail = null;
-        size = 0;
-        
-    }
-    public int peek(int a)
-    {
-        return tail.setValue(a);
-    }
+      throw new QueueException("QueueException on peek:"
+                             + "queue empty");
+    }  
+  }  
     
+   public class QueueException extends RuntimeException 
+   {
+
+  public QueueException(String s) 
+  {
+    super(s);
+  }  
+}  
    
-    
+
 }
