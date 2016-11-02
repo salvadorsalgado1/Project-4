@@ -2,31 +2,26 @@ package Node;
 
 /**
  *
- * @author Student-HSLH133
+ * @author Salvador
  */
 class Node {
  
 int size;
-Node head;
-
-
-  
-
-
+Node next;
 public Node()
    {      
        size = 0;
-      head = null;   
+      next = null;   
    }
    
    public Node(int newValue)
    {      
        size = newValue;       
    }   
-   public Node(int newValue, Node newHead)
+   public Node(int newValue, Node nextNode)
    {
        size = newValue;
-       head = newHead;    
+       next = nextNode;    
    }
       
    public int getSize()
@@ -36,7 +31,7 @@ public Node()
    
    public Node getHead()
    {            
-      return head;       
+      return next;       
    }
    public void setValue(int newValue)
    {
@@ -44,7 +39,7 @@ public Node()
    }
    public void setNext(Node newHead)
    {
-       head = newHead;
+       next = newHead;
    }
    
   
